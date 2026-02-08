@@ -33,10 +33,11 @@ export default function Hero() {
   return (
     <section
       ref={ref}
-      className="relative overflow-hidden min-h-screen flex items-center"
+      className="relative lg:min-h-screen lg:flex lg:items-center"
       style={{
         background: '#0C0F1A',
         backgroundImage: 'radial-gradient(ellipse 80% 50% at 70% 80%, rgba(78, 205, 196, 0.08) 0%, transparent 60%), radial-gradient(ellipse 60% 40% at 30% 90%, rgba(155, 127, 184, 0.06) 0%, transparent 50%)',
+        overflow: 'visible',
       }}
     >
       {/* Animated background glow */}
@@ -59,9 +60,10 @@ export default function Hero() {
         }}
       />
 
-      <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center w-full" style={{ padding: '0 64px' }}>
+      {/* Main grid — single column below 1024px, two columns above */}
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center w-full px-6 sm:px-8 lg:px-16 pt-24 pb-16 lg:pt-0 lg:pb-0">
         {/* Text column */}
-        <motion.div initial="hidden" animate="visible">
+        <motion.div initial="hidden" animate="visible" className="max-lg:text-center">
           {/* Badge */}
           <motion.div
             className="inline-flex items-center gap-2 bg-accent/10 text-accent text-xs font-medium px-4 py-1.5 rounded-full mb-8 border border-accent/10"
@@ -72,9 +74,9 @@ export default function Hero() {
             <span>🇨🇭</span> Made for Swiss Entrepreneurs
           </motion.div>
 
-          {/* Headline with blur reveal */}
+          {/* Headline */}
           <motion.h1
-            className="text-5xl md:text-7xl lg:text-[80px] font-bold text-text leading-[1.05] tracking-tight mb-6"
+            className="text-4xl sm:text-5xl lg:text-7xl xl:text-[80px] font-bold text-text leading-[1.05] tracking-tight mb-6"
             variants={textReveal}
             custom={1}
           >
@@ -89,7 +91,7 @@ export default function Hero() {
           </motion.h1>
 
           <motion.p
-            className="text-muted text-lg md:text-xl leading-relaxed max-w-lg mb-10"
+            className="text-muted text-base sm:text-lg lg:text-xl leading-relaxed max-w-lg mb-10 max-lg:mx-auto"
             variants={textReveal}
             custom={2}
           >
@@ -99,7 +101,7 @@ export default function Hero() {
 
           {/* CTAs */}
           <motion.div
-            className="flex flex-col sm:flex-row gap-4 mb-10"
+            className="flex flex-col sm:flex-row gap-4 mb-10 max-lg:justify-center max-sm:items-stretch"
             variants={textReveal}
             custom={3}
           >
@@ -113,7 +115,7 @@ export default function Hero() {
 
           {/* Trust line */}
           <motion.p
-            className="text-muted text-sm flex items-center gap-2 mb-12"
+            className="text-muted text-sm flex items-center gap-2 mb-12 max-lg:justify-center"
             variants={textReveal}
             custom={4}
           >
@@ -131,8 +133,8 @@ export default function Hero() {
             100% on-device. No cloud. No account.
           </motion.p>
 
-          {/* Stats with spring entrance */}
-          <motion.div className="flex gap-10 md:gap-14" variants={textReveal} custom={5}>
+          {/* Stats */}
+          <motion.div className="flex gap-8 sm:gap-10 lg:gap-14 max-lg:justify-center" variants={textReveal} custom={5}>
             {stats.map(({ value, label }, i) => (
               <motion.div
                 key={label}
@@ -140,16 +142,17 @@ export default function Hero() {
                 animate={{ opacity: 1, scale: 1 }}
                 transition={{ duration: 0.5, delay: 0.8 + i * 0.1, type: 'spring' }}
               >
-                <p className="font-mono text-2xl md:text-3xl font-semibold text-text">{value}</p>
+                <p className="font-mono text-xl sm:text-2xl lg:text-3xl font-semibold text-text">{value}</p>
                 <p className="text-muted text-xs uppercase tracking-wider mt-1">{label}</p>
               </motion.div>
             ))}
           </motion.div>
         </motion.div>
 
-        {/* iPhone mockup — real screenshot */}
+        {/* iPhone mockup */}
         <motion.div
-          className="flex justify-center items-center relative"
+          className="flex justify-center items-center relative mt-10 lg:mt-0"
+          style={{ overflow: 'visible' }}
           initial={{ opacity: 0, y: 60, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ duration: 1, delay: 0.4, ease: [0.25, 0.1, 0.25, 1] }}
@@ -167,12 +170,12 @@ export default function Hero() {
 
           <motion.div
             style={{ y: phoneY, rotate: phoneRotate }}
-            className="relative flex items-center"
+            className="relative flex items-center justify-center"
           >
             <motion.img
               src="/iphone-mockup.png"
               alt="TaxMeter app dashboard showing tax reserve of 3,884 CHF"
-              className="w-auto relative z-10"
+              className="w-full max-w-[260px] sm:max-w-[300px] lg:max-w-none lg:w-auto h-auto relative z-10"
               style={{
                 maxHeight: '580px',
                 transform: 'rotate(2deg)',
@@ -185,9 +188,9 @@ export default function Hero() {
         </motion.div>
       </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll indicator — desktop only */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 flex-col items-center gap-2 hidden lg:flex"
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1.5 }}

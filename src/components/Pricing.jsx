@@ -31,7 +31,7 @@ export default function Pricing() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        Join thousands of Swiss entrepreneurs who trust TaxMeter.ch
+        Designed for the 40,000+ Einzelfirmen in Canton Zurich.
       </motion.p>
       <motion.p
         className="text-accent font-semibold text-lg mb-10 relative"

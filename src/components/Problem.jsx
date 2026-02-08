@@ -53,24 +53,14 @@ export default function Problem() {
           return (
             <motion.div
               key={item.title}
-              className="group bg-card rounded-2xl p-8 border border-transparent hover:border-accent/10 transition-colors duration-500"
+              className="bg-card rounded-2xl p-8 border border-transparent hover:border-accent/10 transition-colors duration-500"
               style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}
-              initial={{ opacity: 0, y: 40, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6, delay: i * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-              whileHover={{
-                y: -6,
-                boxShadow: '0 20px 60px rgba(0,0,0,0.5), 0 0 30px rgba(78,205,196,0.05)',
-                transition: { type: 'spring', stiffness: 300, damping: 20 },
-              }}
+              transition={{ duration: 0.6, delay: i * 0.15, ease: 'easeOut' }}
             >
-              <motion.div
-                whileHover={{ rotate: [0, -10, 10, 0] }}
-                transition={{ duration: 0.5 }}
-              >
-                <Icon className="w-7 h-7 text-muted group-hover:text-accent transition-colors duration-300 mb-5" strokeWidth={1.5} />
-              </motion.div>
+              <Icon className="w-7 h-7 text-muted mb-5" strokeWidth={1.5} />
               <h3 className="text-lg font-semibold text-text mb-3">{item.title}</h3>
               <p className="text-muted text-[15px] leading-relaxed">{item.description}</p>
             </motion.div>
