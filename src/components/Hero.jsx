@@ -1,5 +1,6 @@
 import { motion, useScroll, useTransform } from 'framer-motion'
 import { useRef } from 'react'
+import { useTranslation } from 'react-i18next'
 import AnimatedButton from './AnimatedButton'
 
 const textReveal = {
@@ -12,14 +13,9 @@ const textReveal = {
   }),
 }
 
-const stats = [
-  { value: '95%', label: 'Accuracy' },
-  { value: '2026', label: 'Ready' },
-  { value: '20+', label: 'Municipalities' },
-]
-
 export default function Hero() {
   const ref = useRef(null)
+  const { t } = useTranslation()
   const { scrollYProgress } = useScroll({
     target: ref,
     offset: ['start start', 'end start'],
@@ -29,6 +25,12 @@ export default function Hero() {
   const phoneRotate = useTransform(scrollYProgress, [0, 1], [0, -3])
   const glowScale = useTransform(scrollYProgress, [0, 0.5], [1, 1.3])
   const glowOpacity = useTransform(scrollYProgress, [0, 0.7], [0.2, 0])
+
+  const stats = [
+    { value: '95%', label: t('hero.stats.accuracy') },
+    { value: '2026', label: t('hero.stats.ready') },
+    { value: '20+', label: t('hero.stats.municipalities') },
+  ]
 
   return (
     <section
@@ -61,7 +63,7 @@ export default function Hero() {
       />
 
       {/* Main grid — single column below 1024px, two columns above */}
-      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center w-full px-6 sm:px-8 lg:px-16 pt-24 pb-16 lg:pt-0 lg:pb-0">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-12 items-center w-full px-6 sm:px-8 lg:px-16 pt-[120px] pb-16 lg:pb-0">
         {/* Text column */}
         <motion.div initial="hidden" animate="visible" className="max-lg:text-center">
           {/* Badge */}
@@ -71,7 +73,7 @@ export default function Hero() {
             custom={0}
             whileHover={{ scale: 1.05, borderColor: 'rgba(78,205,196,0.3)' }}
           >
-            <span>🇨🇭</span> Made for Swiss Entrepreneurs
+            <span>🇨🇭</span> {t('hero.badge')}
           </motion.div>
 
           {/* Headline */}
@@ -80,13 +82,13 @@ export default function Hero() {
             variants={textReveal}
             custom={1}
           >
-            Know what's{' '}
+            {t('hero.headline')}{' '}
             <motion.span
               className="text-accent inline-block"
               animate={{ opacity: [0.7, 1, 0.7] }}
               transition={{ duration: 3, repeat: Infinity, ease: 'easeInOut' }}
             >
-              yours.
+              {t('hero.headlineAccent')}
             </motion.span>
           </motion.h1>
 
@@ -95,8 +97,7 @@ export default function Hero() {
             variants={textReveal}
             custom={2}
           >
-            The tax app for Swiss sole proprietors. See exactly how much to reserve,
-            scan your Steuerrechnung, and invoice with QR — all on your device.
+            {t('hero.description')}
           </motion.p>
 
           {/* CTAs */}
@@ -106,10 +107,10 @@ export default function Hero() {
             custom={3}
           >
             <AnimatedButton href="#download" variant="primary">
-              Download for iOS
+              {t('hero.ctaPrimary')}
             </AnimatedButton>
             <AnimatedButton href="#how-it-works" variant="ghost">
-              See how it works <span className="text-muted">↓</span>
+              {t('hero.ctaSecondary')} <span className="text-muted">↓</span>
             </AnimatedButton>
           </motion.div>
 
@@ -130,7 +131,7 @@ export default function Hero() {
             >
               <path strokeLinecap="round" strokeLinejoin="round" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
             </motion.svg>
-            100% on-device. No cloud. No account.
+            {t('hero.trustLine')}
           </motion.p>
 
           {/* Stats */}

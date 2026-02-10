@@ -1,0 +1,137 @@
+{
+  "nav": {
+    "features": "Features",
+    "howItWorks": "How it Works",
+    "download": "Download"
+  },
+  "hero": {
+    "badge": "Made for Swiss Entrepreneurs",
+    "headline": "Know what's",
+    "headlineAccent": "yours.",
+    "description": "The tax app for Swiss sole proprietors. See exactly how much to reserve, scan your Steuerrechnung, and invoice with QR — all on your device.",
+    "ctaPrimary": "Download for iOS",
+    "ctaSecondary": "See how it works",
+    "trustLine": "100% on-device. No cloud. No account.",
+    "stats": {
+      "accuracy": "Accuracy",
+      "ready": "Ready",
+      "municipalities": "Municipalities"
+    }
+  },
+  "problem": {
+    "headline": "Selbständig in Zürich?",
+    "subheading": "If any of this sounds familiar, you're not alone.",
+    "cards": [
+      {
+        "title": "The Tax Reserve Mystery",
+        "description": "Every quarter, you wonder: \"How much should I set aside?\" Too little and you face a surprise bill. Too much and your cash flow suffers."
+      },
+      {
+        "title": "Steuerrechnung Confusion",
+        "description": "The provisional tax bill arrives. Numbers from the canton, the municipality, AHV/IV — none of it matches your expectations. Which is correct?"
+      },
+      {
+        "title": "Manual QR Invoicing",
+        "description": "Creating SIX-compliant QR invoices by hand is tedious and error-prone. One wrong IBAN prefix and your client's bank rejects the payment."
+      }
+    ]
+  },
+  "features": {
+    "headline": "Four powerful tools.",
+    "headlineAccent": "One seamless experience.",
+    "subheading": "Everything you need to manage your taxes and invoices on the go.",
+    "cards": [
+      {
+        "title": "Solaris Dashboard",
+        "description": "Your financial health at a glance. The glowing Solaris Orb shows exactly what's yours to keep, with smart reserves calculated in real-time."
+      },
+      {
+        "title": "Bill Buster OCR",
+        "description": "Scan tax bills instantly. Spot discrepancies between canton estimates and your reality, then generate adjustment requests with one tap."
+      },
+      {
+        "title": "QR Invoicing",
+        "description": "Create Swiss-compliant QR-bills in seconds. Just enter client details and amount — we handle the rest. Share PDFs instantly. Fully SIX-standard compliant."
+      },
+      {
+        "title": "Expense Tracking",
+        "description": "Snap a photo of any receipt. Automatic extraction of vendor, amount, and category. Never lose a deduction again."
+      }
+    ]
+  },
+  "howItWorks": {
+    "headline": "How it works",
+    "subheading": "Three steps. Two minutes. Total clarity.",
+    "steps": [
+      {
+        "title": "Setup",
+        "description": "Enter your canton, income estimate, and filing status. Takes under 2 minutes."
+      },
+      {
+        "title": "Log",
+        "description": "Record income and expenses as they happen. Snap receipts, send invoices, scan bills."
+      },
+      {
+        "title": "Watch the Orb",
+        "description": "The Solaris Orb recalculates in real-time. Always know exactly what's yours to keep."
+      }
+    ]
+  },
+  "privacy": {
+    "headline": "Your financial data stays on your phone. Period.",
+    "description": "We understand the complexity of Swiss taxation — AHV/IV contributions, cantonal variations, municipal rates, and federal obligations. TaxMeter.ch handles it all automatically using a local SQLite database. Zero data leaves your device. No servers. No accounts. No tracking.",
+    "badges": [
+      {
+        "title": "AHV/IV Compliant",
+        "description": "Automatic reserve calculations based on the current 14.3% contribution rate. Covers AHV, IV, EO, and ALV — so you always know exactly what you owe before the bill arrives."
+      },
+      {
+        "title": "Canton Zürich",
+        "description": "Covers 20+ municipalities with exact Steuerfüsse, updated annually. Whether you're in Winterthur or Uster, your cantonal and communal tax rates are already built in."
+      },
+      {
+        "title": "QR-Bill Standard",
+        "description": "Generate fully compliant Swiss QR invoices that meet SIX Interbank Clearing standards. Your clients can scan and pay directly from their banking app — no manual entry needed."
+      }
+    ]
+  },
+  "pricing": {
+    "headline": "Ready to take control?",
+    "subheading": "Designed for the 40,000+ Einzelfirmen in Canton Zurich.",
+    "highlight": "Free during Early Access",
+    "cta": "Try the Live Demo"
+  },
+  "faq": {
+    "headline": "Frequently asked questions",
+    "items": [
+      {
+        "q": "How accurate are the tax calculations?",
+        "a": "TaxMeter.ch uses official cantonal and municipal tax rates for Canton Zürich, updated annually. Our engine accounts for AHV/IV contributions (14.3%), cantonal income tax, municipal multipliers (Steuerfüsse), and federal direct tax. Current accuracy is 95% across supported municipalities."
+      },
+      {
+        "q": "Which regions are supported?",
+        "a": "Optimized for the 20+ largest municipalities in Canton Zurich — including Zürich, Winterthur, Uster, Dübendorf, Dietikon, Wädenswil, Horgen, Bülach, Kloten, Opfikon, Illnau-Effretikon, Volketswil, Adliswil, Wetzikon, Regensdorf, Thalwil, Küsnacht, Maur, Zollikon, and Meilen — with exact Steuerfüsse for each. More municipalities are being added."
+      },
+      {
+        "q": "Can I export my data?",
+        "a": "Yes. You can export all your financial data as CSV or PDF at any time. The data is stored locally in SQLite, so you always have full ownership and control."
+      },
+      {
+        "q": "Is it really free?",
+        "a": "During Early Access, yes — completely free with all features unlocked. We'll introduce a fair pricing model later, with advance notice to all users."
+      },
+      {
+        "q": "What about data privacy?",
+        "a": "All data stays on your iPhone. We use a local SQLite database — nothing is transmitted to any server. No account needed. No analytics. No tracking. Your finances are yours alone."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "TaxMeter · Made in Zürich",
+    "features": "Features",
+    "privacy": "Privacy",
+    "faq": "FAQ",
+    "support": "Support",
+    "disclaimer": "Disclaimer: TaxMeter is for informational purposes only and does not constitute tax, legal, or financial advice. Tax calculations are estimates based on publicly available ZH cantonal tax tables and may differ from your actual tax assessment. Always consult a qualified Treuhänder or tax advisor for your specific situation. © 2026 TaxMeter."
+  }
+}

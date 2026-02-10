@@ -1,51 +1,35 @@
 import Section from './Section'
 import FeatureCard from './FeatureCard'
 import { Activity, ScanLine, QrCode, Receipt } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
-const features = [
-  {
-    icon: <Activity className="w-7 h-7" strokeWidth={1.5} />,
-    title: 'Solaris Dashboard',
-    description:
-      'Your financial health at a glance. The glowing Solaris Orb shows exactly what\'s yours to keep, with smart reserves calculated in real-time.',
-  },
-  {
-    icon: <ScanLine className="w-7 h-7" strokeWidth={1.5} />,
-    title: 'Bill Buster OCR',
-    description:
-      'Scan tax bills instantly. Spot discrepancies between canton estimates and your reality, then generate adjustment requests with one tap.',
-  },
-  {
-    icon: <QrCode className="w-7 h-7" strokeWidth={1.5} />,
-    title: 'QR Invoicing',
-    description:
-      'Create Swiss-compliant QR-bills in seconds. Just enter client details and amount — we handle the rest. Share PDFs instantly. Fully SIX-standard compliant.',
-  },
-  {
-    icon: <Receipt className="w-7 h-7" strokeWidth={1.5} />,
-    title: 'Expense Tracking',
-    description:
-      'Snap a photo of any receipt. Automatic extraction of vendor, amount, and category. Never lose a deduction again.',
-  },
+const featureIcons = [
+  <Activity className="w-7 h-7" strokeWidth={1.5} />,
+  <ScanLine className="w-7 h-7" strokeWidth={1.5} />,
+  <QrCode className="w-7 h-7" strokeWidth={1.5} />,
+  <Receipt className="w-7 h-7" strokeWidth={1.5} />,
 ]
 
 export default function Features() {
+  const { t } = useTranslation()
+  const cards = t('features.cards', { returnObjects: true })
+
   return (
     <Section id="features">
       <div className="text-center mb-16">
         <h2 className="text-3xl md:text-5xl font-bold text-text mb-4">
-          Four powerful tools.
+          {t('features.headline')}
           <br />
-          <span className="text-accent">One seamless experience.</span>
+          <span className="text-accent">{t('features.headlineAccent')}</span>
         </h2>
         <p className="text-muted text-lg max-w-xl mx-auto">
-          Everything you need to manage your taxes and invoices on the go.
+          {t('features.subheading')}
         </p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-6">
-        {features.map((f, i) => (
-          <FeatureCard key={f.title} {...f} index={i} />
+        {cards.map((f, i) => (
+          <FeatureCard key={i} icon={featureIcons[i]} title={f.title} description={f.description} index={i} />
         ))}
       </div>
     </Section>

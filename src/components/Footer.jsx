@@ -1,9 +1,13 @@
+import { useTranslation } from 'react-i18next'
+
 export default function Footer() {
+  const { t } = useTranslation()
+
   const links = [
-    { label: 'Features', href: '#features' },
-    { label: 'Privacy', href: '#privacy' },
-    { label: 'FAQ', href: '#faq' },
-    { label: 'Support', href: 'mailto:hello@taxmeter.ch' },
+    { label: t('footer.features'), href: '#features' },
+    { label: t('footer.privacy'), href: '#privacy' },
+    { label: t('footer.faq'), href: '#faq' },
+    { label: t('footer.support'), href: 'mailto:hello@taxmeter.ch' },
   ]
 
   return (
@@ -13,14 +17,14 @@ export default function Footer() {
           {/* Left */}
           <div className="flex items-center gap-2">
             <img src="/logo.png" alt="TaxMeter logo" className="w-8 h-8 object-contain" />
-            <span className="text-muted text-sm">TaxMeter · Made in Zürich 🇨🇭</span>
+            <span className="text-muted text-sm">{t('footer.tagline')} 🇨🇭</span>
           </div>
 
           {/* Center — nav links */}
           <nav className="flex items-center gap-6">
             {links.map((link) => (
               <a
-                key={link.label}
+                key={link.href}
                 href={link.href}
                 className="text-muted text-sm hover:text-text transition-colors"
               >
@@ -42,7 +46,7 @@ export default function Footer() {
       {/* Disclaimer bar */}
       <div className="border-t border-border py-6 px-6 md:px-8">
         <p className="max-w-6xl mx-auto text-xs leading-relaxed text-center" style={{ color: '#586280' }}>
-          Disclaimer: TaxMeter is for informational purposes only and does not constitute tax, legal, or financial advice. Tax calculations are estimates based on publicly available ZH cantonal tax tables and may differ from your actual tax assessment. Always consult a qualified Treuhänder or tax advisor for your specific situation. © 2026 TaxMeter.
+          {t('footer.disclaimer')}
         </p>
       </div>
     </footer>

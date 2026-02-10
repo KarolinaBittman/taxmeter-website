@@ -1,29 +1,14 @@
 import Section from './Section'
 import { motion } from 'framer-motion'
 import { AlertTriangle, FileQuestion, QrCode } from 'lucide-react'
+import { useTranslation } from 'react-i18next'
 
-const problems = [
-  {
-    icon: AlertTriangle,
-    title: 'The Tax Reserve Mystery',
-    description:
-      'Every quarter, you wonder: "How much should I set aside?" Too little and you face a surprise bill. Too much and your cash flow suffers.',
-  },
-  {
-    icon: FileQuestion,
-    title: 'Steuerrechnung Confusion',
-    description:
-      'The provisional tax bill arrives. Numbers from the canton, the municipality, AHV/IV — none of it matches your expectations. Which is correct?',
-  },
-  {
-    icon: QrCode,
-    title: 'Manual QR Invoicing',
-    description:
-      'Creating SIX-compliant QR invoices by hand is tedious and error-prone. One wrong IBAN prefix and your client\'s bank rejects the payment.',
-  },
-]
+const icons = [AlertTriangle, FileQuestion, QrCode]
 
 export default function Problem() {
+  const { t } = useTranslation()
+  const cards = t('problem.cards', { returnObjects: true })
+
   return (
     <Section id="problem">
       <div className="text-center mb-16">
@@ -34,7 +19,7 @@ export default function Problem() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          Selbständig in Zürich?
+          {t('problem.headline')}
         </motion.h2>
         <motion.p
           className="text-muted text-lg max-w-2xl mx-auto"
@@ -43,16 +28,16 @@ export default function Problem() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          If any of this sounds familiar, you're not alone.
+          {t('problem.subheading')}
         </motion.p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-6">
-        {problems.map((item, i) => {
-          const Icon = item.icon
+        {cards.map((item, i) => {
+          const Icon = icons[i]
           return (
             <motion.div
-              key={item.title}
+              key={i}
               className="group bg-card rounded-2xl p-8 border border-transparent hover:border-accent/10 transition-colors duration-500"
               style={{ boxShadow: '0 8px 32px rgba(0,0,0,0.4)' }}
               initial={{ opacity: 0 }}

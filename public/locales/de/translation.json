@@ -1,0 +1,137 @@
+{
+  "nav": {
+    "features": "Funktionen",
+    "howItWorks": "So funktioniert's",
+    "download": "Herunterladen"
+  },
+  "hero": {
+    "badge": "Entwickelt für Schweizer Unternehmer",
+    "headline": "Wissen, was",
+    "headlineAccent": "Ihnen gehört.",
+    "description": "Die Steuer-App für Schweizer Einzelunternehmer. Sehen Sie genau, wie viel Sie zurücklegen müssen, scannen Sie Ihre Steuerrechnung und erstellen Sie QR-Rechnungen — alles auf Ihrem Gerät.",
+    "ctaPrimary": "Für iOS herunterladen",
+    "ctaSecondary": "So funktioniert's",
+    "trustLine": "100 % auf dem Gerät. Keine Cloud. Kein Konto.",
+    "stats": {
+      "accuracy": "Genauigkeit",
+      "ready": "Bereit",
+      "municipalities": "Gemeinden"
+    }
+  },
+  "problem": {
+    "headline": "Selbständig in Zürich?",
+    "subheading": "Kommt Ihnen das bekannt vor? Damit sind Sie nicht allein.",
+    "cards": [
+      {
+        "title": "Das Steuerrückstellungs-Rätsel",
+        "description": "Jedes Quartal fragen Sie sich: «Wie viel soll ich zurücklegen?» Zu wenig — und eine unerwartete Nachzahlung droht. Zu viel — und Ihre Liquidität leidet."
+      },
+      {
+        "title": "Steuerrechnungs-Verwirrung",
+        "description": "Die provisorische Steuerrechnung kommt. Zahlen vom Kanton, von der Gemeinde, AHV/IV — nichts stimmt mit Ihren Erwartungen überein. Was ist korrekt?"
+      },
+      {
+        "title": "QR-Rechnungen von Hand",
+        "description": "SIX-konforme QR-Rechnungen manuell zu erstellen ist mühsam und fehleranfällig. Ein falscher IBAN-Präfix — und die Bank Ihres Kunden lehnt die Zahlung ab."
+      }
+    ]
+  },
+  "features": {
+    "headline": "Vier leistungsstarke Werkzeuge.",
+    "headlineAccent": "Ein nahtloses Erlebnis.",
+    "subheading": "Alles, was Sie brauchen, um Ihre Steuern und Rechnungen unterwegs zu verwalten.",
+    "cards": [
+      {
+        "title": "Solaris Dashboard",
+        "description": "Ihre finanzielle Gesundheit auf einen Blick. Der leuchtende Solaris Orb zeigt genau, was Ihnen gehört — mit intelligenten Rückstellungen in Echtzeit."
+      },
+      {
+        "title": "Bill Buster OCR",
+        "description": "Steuerrechnungen sofort scannen. Abweichungen zwischen kantonalen Schätzungen und Ihrer Realität erkennen — und mit einem Tipp Anpassungsanträge erstellen."
+      },
+      {
+        "title": "QR-Rechnungen",
+        "description": "Erstellen Sie Schweizer QR-Rechnungen in Sekunden. Geben Sie einfach Kundendaten und Betrag ein — den Rest erledigen wir. PDFs sofort teilen. Vollständig SIX-konform."
+      },
+      {
+        "title": "Spesenerfassung",
+        "description": "Fotografieren Sie jeden Beleg. Automatische Erkennung von Lieferant, Betrag und Kategorie. Verpassen Sie nie wieder einen Abzug."
+      }
+    ]
+  },
+  "howItWorks": {
+    "headline": "So funktioniert's",
+    "subheading": "Drei Schritte. Zwei Minuten. Volle Klarheit.",
+    "steps": [
+      {
+        "title": "Einrichten",
+        "description": "Geben Sie Ihren Kanton, Ihre Einkommensschätzung und Ihren Veranlagungsstatus ein. Dauert weniger als 2 Minuten."
+      },
+      {
+        "title": "Erfassen",
+        "description": "Erfassen Sie Einnahmen und Ausgaben laufend. Belege fotografieren, Rechnungen senden, Steuerrechnungen scannen."
+      },
+      {
+        "title": "Den Orb beobachten",
+        "description": "Der Solaris Orb berechnet in Echtzeit neu. Sie wissen immer genau, was Ihnen gehört."
+      }
+    ]
+  },
+  "privacy": {
+    "headline": "Ihre Finanzdaten bleiben auf Ihrem Telefon. Punkt.",
+    "description": "Wir verstehen die Komplexität des Schweizer Steuersystems — AHV/IV-Beiträge, kantonale Unterschiede, Gemeindesteuersätze und Bundesverpflichtungen. TaxMeter.ch erledigt alles automatisch mit einer lokalen SQLite-Datenbank. Keine Daten verlassen Ihr Gerät. Keine Server. Keine Konten. Kein Tracking.",
+    "badges": [
+      {
+        "title": "AHV/IV-konform",
+        "description": "Automatische Rückstellungsberechnungen basierend auf dem aktuellen Beitragssatz von 14,3 %. Deckt AHV, IV, EO und ALV ab — damit Sie immer genau wissen, was Sie schulden, bevor die Rechnung kommt."
+      },
+      {
+        "title": "Kanton Zürich",
+        "description": "Über 20 Gemeinden mit exakten Steuerfüssen abgedeckt, jährlich aktualisiert. Ob Sie in Winterthur oder Uster sind — Ihre kantonalen und kommunalen Steuersätze sind bereits integriert."
+      },
+      {
+        "title": "QR-Rechnungsstandard",
+        "description": "Erstellen Sie vollständig konforme Schweizer QR-Rechnungen nach SIX Interbank Clearing Standards. Ihre Kunden können direkt aus ihrer Banking-App scannen und bezahlen — keine manuelle Eingabe nötig."
+      }
+    ]
+  },
+  "pricing": {
+    "headline": "Bereit, die Kontrolle zu übernehmen?",
+    "subheading": "Entwickelt für die über 40'000 Einzelfirmen im Kanton Zürich.",
+    "highlight": "Kostenlos während des Early Access",
+    "cta": "Live-Demo testen"
+  },
+  "faq": {
+    "headline": "Häufig gestellte Fragen",
+    "items": [
+      {
+        "q": "Wie genau sind die Steuerberechnungen?",
+        "a": "TaxMeter.ch verwendet offizielle kantonale und kommunale Steuersätze für den Kanton Zürich, die jährlich aktualisiert werden. Unsere Engine berücksichtigt AHV/IV-Beiträge (14,3 %), kantonale Einkommenssteuer, kommunale Steuerfüsse und die direkte Bundessteuer. Die aktuelle Genauigkeit beträgt 95 % in allen unterstützten Gemeinden."
+      },
+      {
+        "q": "Welche Regionen werden unterstützt?",
+        "a": "Optimiert für die über 20 grössten Gemeinden im Kanton Zürich — darunter Zürich, Winterthur, Uster, Dübendorf, Dietikon, Wädenswil, Horgen, Bülach, Kloten, Opfikon, Illnau-Effretikon, Volketswil, Adliswil, Wetzikon, Regensdorf, Thalwil, Küsnacht, Maur, Zollikon und Meilen — mit exakten Steuerfüssen für jede Gemeinde. Weitere Gemeinden werden laufend ergänzt."
+      },
+      {
+        "q": "Kann ich meine Daten exportieren?",
+        "a": "Ja. Sie können alle Ihre Finanzdaten jederzeit als CSV oder PDF exportieren. Die Daten werden lokal in SQLite gespeichert — Sie haben jederzeit die volle Kontrolle."
+      },
+      {
+        "q": "Ist es wirklich kostenlos?",
+        "a": "Während des Early Access ja — komplett kostenlos mit allen Funktionen. Wir führen später ein faires Preismodell ein, mit rechtzeitiger Benachrichtigung aller Nutzer."
+      },
+      {
+        "q": "Wie steht es um den Datenschutz?",
+        "a": "Alle Daten bleiben auf Ihrem iPhone. Wir verwenden eine lokale SQLite-Datenbank — es werden keine Daten an Server übertragen. Kein Konto nötig. Keine Analysen. Kein Tracking. Ihre Finanzen gehören Ihnen allein."
+      }
+    ]
+  },
+  "footer": {
+    "tagline": "TaxMeter · Made in Zürich",
+    "features": "Funktionen",
+    "privacy": "Datenschutz",
+    "faq": "FAQ",
+    "support": "Support",
+    "disclaimer": "Haftungsausschluss: TaxMeter dient ausschliesslich zu Informationszwecken und stellt keine steuerliche, rechtliche oder finanzielle Beratung dar. Steuerberechnungen sind Schätzungen auf Basis öffentlich zugänglicher ZH-Steuertabellen und können von Ihrer tatsächlichen Veranlagung abweichen. Konsultieren Sie stets einen qualifizierten Treuhänder oder Steuerberater für Ihre individuelle Situation. © 2026 TaxMeter."
+  }
+}

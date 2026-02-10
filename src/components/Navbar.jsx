@@ -1,15 +1,60 @@
 import { useState } from 'react'
 import { motion, AnimatePresence, useMotionValueEvent, useScroll } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import AnimatedButton from './AnimatedButton'
+
+function LanguageToggle() {
+  const { i18n } = useTranslation()
+  const currentLang = i18n.language?.startsWith('de') ? 'de' : 'en'
+
+  return (
+    <motion.div
+      className="flex items-center bg-card rounded-lg border border-border overflow-hidden"
+      whileHover={{ y: -1, scale: 1.03 }}
+      transition={{ type: 'spring', stiffness: 400, damping: 17 }}
+    >
+      {['EN', 'DE'].map((lang) => {
+        const isActive = currentLang === lang.toLowerCase()
+        return (
+          <button
+            key={lang}
+            onClick={() => i18n.changeLanguage(lang.toLowerCase())}
+            className={`relative px-3 py-1.5 text-xs font-semibold tracking-wide border-none cursor-pointer transition-colors duration-200 ${
+              isActive
+                ? 'text-dark'
+                : 'text-muted hover:text-text bg-transparent'
+            }`}
+          >
+            {isActive && (
+              <motion.div
+                layoutId="lang-active"
+                className="absolute inset-0 bg-accent rounded-md"
+                transition={{ type: 'spring', stiffness: 400, damping: 30 }}
+              />
+            )}
+            <span className="relative z-10">{lang}</span>
+          </button>
+        )
+      })}
+    </motion.div>
+  )
+}
 
 export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const { scrollY } = useScroll()
+  const { t, i18n } = useTranslation()
+  const currentLang = i18n.language?.startsWith('de') ? 'de' : 'en'
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setScrolled(latest > 50)
   })
+
+  const navLinks = [
+    { key: 'features', href: '#features' },
+    { key: 'howItWorks', href: '#how-it-works' },
+  ]
 
   return (
     <motion.nav
@@ -42,24 +87,25 @@ export default function Navbar() {
 
         {/* Desktop links */}
         <div className="hidden md:flex items-center gap-8">
-          {['Features', 'How it Works'].map((label) => (
+          {navLinks.map(({ key, href }) => (
             <motion.a
-              key={label}
-              href={`#${label.toLowerCase().replace(/ /g, '-')}`}
+              key={key}
+              href={href}
               className="text-muted hover:text-text transition-colors text-sm no-underline relative group"
               whileHover={{ y: -1 }}
               transition={{ type: 'spring', stiffness: 300 }}
             >
-              {label}
+              {t(`nav.${key}`)}
               <span className="absolute -bottom-1 left-0 right-0 h-px bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-200 origin-left" />
             </motion.a>
           ))}
         </div>
 
-        {/* Desktop CTA */}
-        <div className="hidden md:block">
+        {/* Desktop right side */}
+        <div className="hidden md:flex items-center gap-4">
+          <LanguageToggle />
           <AnimatedButton href="#download" variant="nav">
-            Download
+            {t('nav.download')}
           </AnimatedButton>
         </div>
 
@@ -85,19 +131,45 @@ export default function Navbar() {
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.3 }}
           >
-            {['Features', 'How it Works'].map((label, i) => (
+            {navLinks.map(({ key, href }, i) => (
               <motion.a
-                key={label}
-                href={`#${label.toLowerCase().replace(/ /g, '-')}`}
+                key={key}
+                href={href}
                 className="text-muted hover:text-text text-base no-underline"
                 onClick={() => setMobileOpen(false)}
                 initial={{ x: -20, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
                 transition={{ delay: i * 0.1 }}
               >
-                {label}
+                {t(`nav.${key}`)}
               </motion.a>
             ))}
+
+            {/* Mobile language toggle */}
+            <motion.div
+              className="flex items-center gap-3 py-1"
+              initial={{ x: -20, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ delay: 0.15 }}
+            >
+              {['EN', 'DE'].map((lang) => {
+                const isActive = currentLang === lang.toLowerCase()
+                return (
+                  <button
+                    key={lang}
+                    onClick={() => i18n.changeLanguage(lang.toLowerCase())}
+                    className={`px-4 py-1.5 rounded-lg text-sm font-semibold border-none cursor-pointer transition-colors duration-200 ${
+                      isActive
+                        ? 'bg-accent text-dark'
+                        : 'bg-transparent text-muted hover:text-text'
+                    }`}
+                  >
+                    {lang}
+                  </button>
+                )
+              })}
+            </motion.div>
+
             <motion.a
               href="#download"
               className="bg-accent text-dark font-semibold text-sm px-5 py-2.5 rounded-xl text-center no-underline"
@@ -106,7 +178,7 @@ export default function Navbar() {
               animate={{ x: 0, opacity: 1 }}
               transition={{ delay: 0.2 }}
             >
-              Download
+              {t('nav.download')}
             </motion.a>
           </motion.div>
         )}

@@ -1,8 +1,11 @@
 import Section from './Section'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 import AnimatedButton from './AnimatedButton'
 
 export default function Pricing() {
+  const { t } = useTranslation()
+
   return (
     <Section id="download" className="text-center relative">
       {/* Background accent glow */}
@@ -22,7 +25,7 @@ export default function Pricing() {
         viewport={{ once: true }}
         transition={{ duration: 0.6 }}
       >
-        Ready to take control?
+        {t('pricing.headline')}
       </motion.h2>
       <motion.p
         className="text-muted text-lg mb-3 max-w-lg mx-auto relative"
@@ -31,7 +34,7 @@ export default function Pricing() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.1 }}
       >
-        Designed for the 40,000+ Einzelfirmen in Canton Zurich.
+        {t('pricing.subheading')}
       </motion.p>
       <motion.p
         className="text-accent font-semibold text-lg mb-10 relative"
@@ -40,7 +43,7 @@ export default function Pricing() {
         viewport={{ once: true }}
         transition={{ duration: 0.6, delay: 0.2 }}
       >
-        Free during Early Access
+        {t('pricing.highlight')}
       </motion.p>
       <motion.div
         className="relative"
@@ -50,7 +53,7 @@ export default function Pricing() {
         transition={{ duration: 0.6, delay: 0.3 }}
       >
         <AnimatedButton href="#" variant="large">
-          Try the Live Demo
+          {t('pricing.cta')}
         </AnimatedButton>
       </motion.div>
     </Section>

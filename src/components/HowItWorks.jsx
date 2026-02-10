@@ -1,25 +1,13 @@
 import Section from './Section'
 import { motion } from 'framer-motion'
+import { useTranslation } from 'react-i18next'
 
-const steps = [
-  {
-    num: '01',
-    title: 'Setup',
-    description: 'Enter your canton, income estimate, and filing status. Takes under 2 minutes.',
-  },
-  {
-    num: '02',
-    title: 'Log',
-    description: 'Record income and expenses as they happen. Snap receipts, send invoices, scan bills.',
-  },
-  {
-    num: '03',
-    title: 'Watch the Orb',
-    description: 'The Solaris Orb recalculates in real-time. Always know exactly what\'s yours to keep.',
-  },
-]
+const stepNums = ['01', '02', '03']
 
 export default function HowItWorks() {
+  const { t } = useTranslation()
+  const steps = t('howItWorks.steps', { returnObjects: true })
+
   return (
     <Section id="how-it-works">
       <div className="text-center mb-16">
@@ -30,7 +18,7 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          How it works
+          {t('howItWorks.headline')}
         </motion.h2>
         <motion.p
           className="text-muted text-lg"
@@ -39,7 +27,7 @@ export default function HowItWorks() {
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          Three steps. Two minutes. Total clarity.
+          {t('howItWorks.subheading')}
         </motion.p>
       </div>
 
@@ -58,7 +46,7 @@ export default function HowItWorks() {
 
         {steps.map((step, i) => (
           <motion.div
-            key={step.num}
+            key={i}
             className="text-center relative"
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -78,7 +66,7 @@ export default function HowItWorks() {
                 transition={{ duration: 3, repeat: Infinity, delay: i * 0.5 }}
               />
               <div className="w-14 h-14 rounded-full bg-accent/10 border border-accent/20 flex items-center justify-center relative z-10">
-                <span className="font-mono text-accent font-semibold text-sm">{step.num}</span>
+                <span className="font-mono text-accent font-semibold text-sm">{stepNums[i]}</span>
               </div>
             </motion.div>
 
