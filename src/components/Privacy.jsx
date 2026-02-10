@@ -67,7 +67,7 @@ export default function Privacy() {
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
           >
-            <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-4">
+            <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-4 transition-all duration-300 ease-in-out hover:bg-accent/25 hover:scale-105 hover:-translate-y-1">
               {badge.icon}
             </div>
             <h3 className="text-text font-semibold text-[15px] mb-2">{badge.title}</h3>

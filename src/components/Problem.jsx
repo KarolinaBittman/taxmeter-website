@@ -60,7 +60,9 @@ export default function Problem() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: i * 0.15, ease: 'easeOut' }}
             >
-              <Icon className="w-7 h-7 text-muted mb-5" strokeWidth={1.5} />
+              <div className="mb-5 inline-block transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 group/icon">
+                <Icon className="w-7 h-7 text-muted group-hover/icon:text-accent transition-colors duration-300 ease-in-out" strokeWidth={1.5} />
+              </div>
               <h3 className="text-lg font-semibold text-text mb-3">{item.title}</h3>
               <p className="text-muted text-[15px] leading-relaxed">{item.description}</p>
             </motion.div>

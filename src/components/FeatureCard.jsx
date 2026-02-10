@@ -12,7 +12,7 @@ export default function FeatureCard({ icon, title, description, index = 0 }) {
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.15, ease: 'easeOut' }}
     >
-      <div className="mb-5 text-muted">
+      <div className="mb-5 text-muted hover:text-accent transition-all duration-300 ease-in-out hover:scale-105 hover:-translate-y-1 inline-block">
         {icon}
       </div>
       <h3 className="text-xl font-semibold text-text mb-3">{title}</h3>
