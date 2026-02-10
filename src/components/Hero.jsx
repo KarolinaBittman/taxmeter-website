@@ -78,7 +78,7 @@ export default function Hero() {
 
           {/* Headline */}
           <motion.h1
-            className="text-4xl sm:text-5xl lg:text-7xl xl:text-[80px] font-bold text-text leading-[1.05] tracking-tight mb-6"
+            className="text-4xl sm:text-5xl lg:text-7xl xl:text-[80px] font-bold text-text leading-[1.05] mb-6"
             variants={textReveal}
             custom={1}
           >
