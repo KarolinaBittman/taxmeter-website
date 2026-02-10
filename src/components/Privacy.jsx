@@ -61,13 +61,13 @@ export default function Privacy() {
         {badges.map((badge, i) => (
           <motion.div
             key={badge.title}
-            className="bg-card rounded-xl px-6 py-7 border border-border hover:border-accent/20 transition-colors"
+            className="group bg-card rounded-xl px-6 py-7 border border-border hover:border-accent/20 transition-colors"
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.1 }}
           >
-            <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-4 transition-all duration-300 ease-in-out hover:bg-accent/25 hover:scale-105 hover:-translate-y-1">
+            <div className="w-9 h-9 rounded-lg bg-accent/10 flex items-center justify-center text-accent mb-4 transition-all duration-300 ease-in-out group-hover:bg-accent/25 group-hover:scale-105 group-hover:-translate-y-1">
               {badge.icon}
             </div>
             <h3 className="text-text font-semibold text-[15px] mb-2">{badge.title}</h3>
